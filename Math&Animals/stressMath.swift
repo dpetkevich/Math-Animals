@@ -12,9 +12,9 @@ class stressMathModel {
     
     var percentage: Double
     var operand: Double
-    var correctResult: Double {
+    var correctResult: Int {
         get {
-            return percentage*operand
+            return Int(percentage*operand)
         }
     
     }
@@ -23,10 +23,10 @@ class stressMathModel {
         percentage=Double(((arc4random_uniform(20)+1)*5))/100
         println(percentage)
         operand=Double((arc4random_uniform(100)+1)/10)*pow(10,Double((arc4random() % 8)+2));
-
+        println(operand)
     }
    
-    func isCorrect(submission:Double) -> Bool {
+    func isCorrect(submission:Int) -> Bool {
         if (correctResult==submission){
             return true;
         }
